@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter</title>
+    <link rel="stylesheet" a href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/brands.min.css" integrity="sha512-rQgMaFKZKIoTKfYInSVMH1dSM68mmPYshaohG8pK17b+guRbSiMl9dDbd3Sd96voXZeGerRIFFr2ewIiusEUgg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <style>
+          * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: white;
+    overflow:hidden;
+}
+
+.sidebarOptions {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidebarOptions .material-icons,
+ .fa-twitter {
+    padding: 18px;
+}
+
+.sidebarOptions h2 {
+    font-weight: 800;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.sidebarOptions:hover {
+    background-color: #e6ecf0;
+    border-radius: 30px;
+    color: #50b7f5;
+    transition: color 100ms ease-out;
+}
+
+.sidebarOptions.active {
+    color: #50b7f5;
+} 
+
+.sidebar_tweet {
+    color: #50b7f5;
+    width: 100%;
+    background-color: #50b7f5;
+    color: white;
+    margin-top: 20px;
+    font-weight: 900;
+    border-radius: 30px;
+    height: 50px;
+    border: none;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;
+}
+
+.sidebar {
+    border-right: 1px solid #e6ecf0;
+    flex: 0.2;
+    min-width: 250px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: sticky;
+}
+ 
+.fa-twitter {
+    color: #50b7f5;
+    font-size: 30px;
+}
+
+.main_box {
+    max-width: 100%;
+    min-width: 50%;
+    border-right:1px solid #e6ecf0 ;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.main_box::-webkit-scrollbar {
+    display: none;
+}
+
+.main_box {
+    -ms-overflow-style:none;
+    scrollbar-width: none;
+}
+
+.first h2 {
+    padding: 20px;
+}
+
+.first .material-icons {
+    float: right;
+    transform: translate(0px , -60px);
+    padding: 20px;
+}
+
+.text .material-icons {
+    font-size: 50px;
+    padding: 20px ;
+    cursor: pointer;
+}
+
+.text input[type="text"] {
+    transform: translate( -18px, -20px);
+    border: none;
+    border-style: underline;
+    outline: none;
+    font-size: 20px;
+}
+
+.ico {
+    margin-left: 70px;
+    color: rgb(0, 81, 255);
+    cursor: pointer;
+}
+
+.ico .button {
+    float:right;
+    border-radius: 35px;
+    background-color: #50b7f5;
+    color: white;
+    width: 15%;
+    padding: .5rem;
+    border: none;
+    transform: translate(0 , -7px);
+}
+.home_box {
+    border-bottom: 1px solid #e6ecf0;
+    position: sticky;
+    top:0;
+    background-color: white;
+    z-index: 100;
+}
+
+.all_tweets .material-icons {
+    font-size: 50px;
+    padding: 20px;
+}
+.all_tweets h2 {
+    font-size: 20px;
+    transform: translate(80px , -55px);
+}
+.all_tweets p {
+    font-size: 20px;
+    font-weight: 200;
+    transform: translate(80px , -45px);
+}
+
+.right-sidebar{
+    background-color: white;
+    border-left: 1px solid #e6ecf0;
+    width: 50%;
+    float: right;
+}
+
+.right-sidebar input[type="text"]{
+    border-radius: 30px;
+    width: 90%;
+    margin-left: 30px;
+    padding: .5rem;
+    background-color: #e6ecf0;
+}
+
+.happening {
+    width: 90%;
+    height: 85%;
+    border-radius: 30px;
+    border: 1px solid #e6ecf0;
+    margin-left: 30px;
+    margin-top:20px;
+    padding: 5px;
+}
+
+.happening h1 {
+    font-size: 1.5rem;
+    font-weight: 1000;
+    padding: 10px;
+}
+
+.happening p {
+    margin-top: 20px;
+    color: grey;
+}
+
+
+.happening p1 {
+    margin-top: 10px;
+}
+
+.happening img {
+    float: right;
+    transform: translate(0 , -30px);
+    margin-right: 10px;
+    border-radius: 15px;
+}
+
+.trending_section {
+    line-height: 1.3rem;
+    word-spacing: .3rem;
+    padding: 0px  1px  0px  1px;
+}
+
+.trending_section:hover{
+    background-color: #e6ecf0;
+    transition: color 100ms ease-out;
+    cursor: pointer;
+}
+
+.happening h2 {
+    margin-top: 30px;
+    font-size: 1rem;
+}
+
+.happening h3 {
+    color: grey;
+    font-size: 1rem;
+}
+
+.happening h4 {
+    font-size: 1rem;
+    color: grey;
+    transform: translate(-5px);
+}
+
+.happening .material-icons {
+    font-size: 1rem;
+}
+
+.happening h5 {
+    margin-top: 30px;
+    font-size: 1rem;
+    color: grey;
+}
+
+.happening h6 {
+    font-size: 1rem;
+}
+
+.happening h7 {
+    font-size: 1rem;
+    color: grey;
+}
+
+.happening b {
+    transform: translate(0 , 300px);
+    font-size: 1rem;
+    color: grey;
+}
+
+.happening b1 {
+    font-size: 1rem;
+}
+
+.happening b2 {
+    font-size: 1rem;
+    color: grey;
+}
+
+.trend .material-icons{
+    color: black;
+    float: right;
+    cursor: pointer;
+}
+
+
+      </style>
+</head>
+<body>
+<div class="sidebar">
+    <i class="fab fa-twitter"></i>
+    <div class="sidebarOptions active">
+        <span class="material-icons">
+            home
+            </span>
+            <h2>Home</h2>
+    </div>
+    <div class="sidebarOptions">
+        <span class="material-icons">
+            tag
+            </span>
+            <h2>Explore</h2>
+    </div>
+    <div class="sidebarOptions">
+        <span class="material-icons">
+            notifications
+            </span>
+            <h2>Notification</h2>
+    </div>
+    <div class="sidebarOptions">
+        <span class="material-icons">
+            email
+            </span>
+            <h2>Messages</h2>
+    </div>
+    <div class="sidebarOptions">
+        <span class="material-icons">
+            bookmark_border
+            </span>
+            <h2>Bookmarks</h2>
+    </div>
+    <div class="sidebarOptions">
+        <span class="material-icons">
+            receipt_long
+            </span>
+            <h2>List</h2>
+    </div>
+    <div class="sidebarOptions">
+        <span class="material-icons">
+            person
+            </span>
+            <h2>Profile</h2>
+    </div>
+    <div class="sidebarOptions">
+        <span class="material-icons">
+            more_horiz
+            </span>
+            <h2>More</h2>
+    </div>
+    <button class="sidebar_tweet">Tweet</button>
+</div>
+<div class="main_box">
+    <div class="home_box">
+        <div class="first">
+        <h2>Home</h2>      <span class="material-icons">
+            auto_awesome
+            </span>
+            </div>
+            <div class="text">
+                <span class="material-icons">
+                    face
+                    </span>
+                    <input type="text" placeholder="What's happening?">
+            </div>
+            <div class="ico">
+                <span class="material-icons">
+                    image
+                    </span>
+                    <span class="material-icons">
+                        gif_box
+                        </span>
+                        <span class="material-icons">
+                            bar_chart
+                            </span>
+                            <span class="material-icons">
+                                sentiment_satisfied_alt
+                                </span>
+                                <span class="material-icons">
+                                    calendar_today
+                                    </span>
+                <button class="button">Tweet</button>
+            </div>
+    </div>
+    <div class="all_tweets">
+        <span class="material-icons">
+            account_circle
+            </span>
+            <h2>Yash Sanger</h2>
+            <p>I am very glad that I have completed 1 million subscribers on Youtube.</p>
+    </div>
+    <img src="https://images.indianexpress.com/2020/08/mount-abu.jpg">
+</div>
+<div class="right-sidebar">
+    <input type="text"  placeholder="Search">
+    <div class="happening">
+        <h1>What's happening</h1>
+        <div class="trending_section">
+        <p>Covid-19.Live</p>  <img src="https://c.ndtvimg.com/2021-06/bcbk91d_novavax-covovax-reuters_625x300_17_June_21.jpg?im=Resize=(1230,900)" width="80px" height="80px">
+        <p1>Covovax gets emergency use approval from WHO</p1>
+        </div>
+        <div class="trending_section">
+        <h2>#vivoSwitchOff</h2>
+        <h3>#SwitchOff for your loved ones</h3>
+        <h4><b><span class="material-icons">
+            open_in_new
+            </span></b>Promoted by Vivo India</h4>
+            </div>
+            <div class="trending_section">
+            <div class="trend">
+            <h5>Politics.Trending
+                <span class="material-icons">
+                    more_horiz
+                    </span>
+            </h5>
+            <h6>#GoBackModi</h6>
+            <h7>6,602 Tweets</h7>
+            </div>
+            </div>
+            <div class="trending_section">
+            <div class="trend">
+            <h5>Trending in India
+                <span class="material-icons">
+                    more_horiz
+                    </span>
+            </h5>
+            <h6>HBD BB KING PRATIK</h6>
+            <h7>1.5M Tweets</h7>
+            </div>
+            </div>
+            <div class="trending_section">
+                <h5>India national news.December 16,2021</h5>
+                <h6>महिलाओं की शादी की उम्र 18 से बढ़ाकर 21 साल करने पर केंद्रीय मंत्रिमंडल की मंजुरी </h6>
+             </div>
+            </div>
+            </div>
+</body>
+</html>
